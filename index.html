@@ -52,7 +52,7 @@
         const city = document.getElementById('location').innerText;
 
         function getWeather(city) {
-            fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=dca634834af0e4d22c778583eb0760fb`)
+            fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=dca634834af0e4d22c778583eb0760fb`)
                 .then(res => res.json())
                 .then(data => {
                     document.getElementById('show-location').innerText = data.name;
@@ -60,6 +60,8 @@
                     document.getElementById('des').innerText = data.weather[0].main;
                     // document.getElementById('icon').src = data.weather[0].icon;
 
+
+                    
                     // console.log(data.name);
                 })
         }
@@ -68,9 +70,9 @@
         document.getElementById('search').addEventListener('click', function () {
             const location = document.getElementById('location').value;
             getWeather(location);
+            document.getElementById('location').value = "";
         })
         getWeather('dhaka')
-        
     </script>
 
 </body>
