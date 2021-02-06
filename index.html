@@ -58,7 +58,7 @@
                     document.getElementById('show-location').innerText = data.name;
                     document.getElementById('temp').innerText = data.main.temp;
                     document.getElementById('des').innerText = data.weather[0].main;
-                    document.getElementById('icon').src = data.weather[0].icon;
+                    // document.getElementById('icon').src = data.weather[0].icon;
 
                     // console.log(data.name);
                 })
@@ -69,6 +69,7 @@
             const location = document.getElementById('location').value;
             getWeather(location);
         })
+        getWeather('dhaka')
         
     </script>
 
